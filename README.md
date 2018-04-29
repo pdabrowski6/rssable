@@ -1,4 +1,6 @@
-<p align="center">![RSSable](http://pdabrowski.com/blog/wp-content/uploads/2018/04/rssable.png)</p>
+<p align="center">
+  <img src="http://pdabrowski.com/blog/wp-content/uploads/2018/04/rssable.png" alt="RSSable"/>
+</p>
 
 # The RSSable Ruby gem
 
