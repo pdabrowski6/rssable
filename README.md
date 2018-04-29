@@ -1,6 +1,8 @@
+<p align="center">![RSSable](http://pdabrowski.com/blog/wp-content/uploads/2018/04/rssable.png)</p>
+
 # The RSSable Ruby gem
 
-![RSSable](http://pdabrowski.com/blog/wp-content/uploads/2018/04/rssable.png) Pull the RSS feed for any website you want without worrying about the RSS feed existence or engine. The gem takes a URL address, finds the RSS feed, detects the generator and returns standardized feed interface as a simple Ruby object.
+Pull the RSS feed for any website you want without worrying about the RSS feed existence or engine. The gem takes a URL address, finds the RSS feed, detects the generator and returns standardized feed interface as a simple Ruby object.
 
 ## Installation
     gem install rssable
