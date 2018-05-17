@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'rest-client'
-require 'URI'
+require 'uri'
 require 'rssable/detection/feed_finder'
 require 'rssable/detection/engine_detector'
 require 'rssable/parsers/items/base'
