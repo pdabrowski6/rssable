@@ -59,9 +59,16 @@ last_article.comments_count # => 15
 ```
 
 ## Supported Ruby Versions
+
 This gem was tested on the 2.5.0 version. If it's not working with older versions please add a new issue.
 
+## Committers and Contributors
+
+* Paweł Dąbrowski ([rubyhero](https://github.com/rubyhero))
+* Dmitry Makeev ([dskyyy](https://github.com/dskyyy))
+
 ## Copyright
+
 Copyright (c) 2018 Paweł Dąbrowski.
 See [LICENSE][] for details.
 
