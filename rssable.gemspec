@@ -3,8 +3,8 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rssable/version'
 
 Gem::Specification.new do |s|
-  s.add_runtime_dependency 'rest-client', '2.0.2'
-  s.add_runtime_dependency 'nokogiri', '1.8.2'
+  s.add_runtime_dependency 'rest-client', '~> 2.0', '>= 2.0.2'
+  s.add_runtime_dependency 'nokogiri', '~> 1.8', '>= 1.8.2'
   s.add_development_dependency "rspec"
   s.name        = 'rssable'
   s.version     = RSSable::Version
