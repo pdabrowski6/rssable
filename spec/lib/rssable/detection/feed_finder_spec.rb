@@ -15,5 +15,19 @@ describe RSSable::Detection::FeedFinder do
       expect(RestClient).to have_received(:get).with(url).once
       expect(result).to eq(["http://website.com/feed/"])
     end
+
+    it 'returns default feed link for given URL' do
+      url = "http://website.com"
+      html = ''
+      response = double('response', body: html)
+      allow(RestClient).to receive(:get).with(url).and_return(response)
+
+      result = described_class.call(
+        url: url
+      )
+
+      expect(RestClient).to have_received(:get).with(url).once
+      expect(result).to eq(["http://website.com/feed/"])
+    end
   end
 end

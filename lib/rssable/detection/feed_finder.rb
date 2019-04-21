@@ -8,7 +8,11 @@ module RSSable
         response = RestClient.get(url)
         html = Nokogiri::HTML(response.body)
 
-        html.css("link[type='application/rss+xml']").map { |node| node[:href] }
+        links = html.css("link[type='application/rss+xml']").map { |node| node[:href] }
+        
+        return links if links.size > 0
+
+        url.end_with?('/') ? ["#{url}feed/"] : ["#{url}/feed/"]
       end
     end
   end
