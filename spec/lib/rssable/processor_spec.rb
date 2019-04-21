@@ -2,6 +2,25 @@ require 'spec_helper'
 
 describe RSSable::Processor do
   describe '.call' do
+    it 'returns nil if feed is not accessible' do
+      url = "http://blog.com"
+      urls = ["http://blog.com/feed/", "http://blog.com/comments/feed/"]
+      feed_url = "http://blog.com/feed/"
+      driver = :wordpress
+      allow(RSSable::Detection::FeedFinder).to receive(:call).with(
+        url: url
+      ).and_return(urls)
+      allow(RSSable::Detection::EngineDetector).to receive(:call).with(
+        urls: urls, source_url: url
+      ).and_return([feed_url, driver])
+      response = double('response', body: 'feed')
+      allow(RestClient).to receive(:get).with(feed_url).and_raise(RestClient::NotFound)
+
+      result = described_class.call(url: url)
+
+      expect(result).to eq(nil)
+    end
+
     it 'returns nil if feed URL is not found' do
       url = "http://blog.com"
       urls = ["http://blog.com/feed/", "http://blog.com/comments/feed/"]

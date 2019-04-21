@@ -17,6 +17,7 @@ module RSSable
       RSSable::Parsers::Channel.new(
         feed: response.body, driver: driver
       )
+    rescue RestClient::NotFound
     end
   end
 end
